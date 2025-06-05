@@ -6,6 +6,13 @@
 
 ## 🚀 Project Goals
 
+### Phase 1 - Minimum Viable Product (MVP)
+* Build a simple, accessible cell stock management system for daily lab use.
+* Label and track the usage of cells in each tube with colour coding.
+* Implement a secure user login system with basic role management.
+* Provide a basic but usable interface for adding, editing, and viewing cell stock data in real-time.
+
+### Phase 2 - Enhancement (Frontend)
 * Provide a secure and user-friendly interface for managing cell stock.
 * Enable real-time updates and visibility of stock levels and sample details.
 * Ensure platform accessibility from work machines with restricted admin access.
