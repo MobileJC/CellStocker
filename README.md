@@ -1,95 +1,60 @@
-# 🧬 CellStocker - Online Cell Stock Management System
+# CodeIgniter 4 Framework
 
-**CellStocker** is a lightweight web-based application designed to help flow cytometrists and laboratory staff manage and track their cell stock efficiently. This project originated from a real-world use case, with input from a working flow cytometrist, aiming to replace manual logs and spreadsheets with an accessible, centralized system.
+## What is CodeIgniter?
 
----
+CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
+More information can be found at the [official site](https://codeigniter.com).
 
-## 🚀 Project Goals
+This repository holds the distributable version of the framework.
+It has been built from the
+[development repository](https://github.com/codeigniter4/CodeIgniter4).
 
-### Phase 1 - Minimum Viable Product (MVP)
-* Build a simple, accessible cell stock management system for daily lab use.
-* Label and track the usage of cells in each tube with colour coding.
-* Implement a secure user login system with basic role management.
-* Provide a basic but usable interface for adding, editing, and viewing cell stock data in real-time.
+More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
 
-### Phase 2 - Enhancement (Frontend)
-* Provide a secure and user-friendly interface for managing cell stock.
-* Enable real-time updates and visibility of stock levels and sample details.
-* Ensure platform accessibility from work machines with restricted admin access.
-* Lay the foundation for future enhancements with modern frontend technologies.
+You can read the [user guide](https://codeigniter.com/user_guide/)
+corresponding to the latest version of the framework.
 
----
+## Important Change with index.php
 
-## 🧱 Tech Stack
+`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
+for better security and separation of components.
 
-### Initial Phase (Backend Focus)
+This means that you should configure your web server to "point" to your project's *public* folder, and
+not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
+framework are exposed.
 
-* **PHP** (server-side logic)
-* **MySQL** (data storage via phpMyAdmin)
-* **HTML/CSS** (basic UI)
+**Please** read the user guide for a better explanation of how CI4 works!
 
-### Planned Enhancements
+## Repository Management
 
-* **React / TypeScript** (modern frontend)
-* **Bootstrap or custom CSS** (responsive styling)
-* **RESTful APIs** (for frontend-backend communication)
-* **Authentication and role-based access** (Admin, Lab User)
+We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
+We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
+FEATURE REQUESTS.
 
----
+This repository is a "distribution" one, built by our release preparation script.
+Problems with it can be raised on our forum, or as issues in the main repository.
 
-## 🔧 Features
+## Contributing
 
-* [x] Add / edit / delete cell records
-* [x] Search or filter cells by type, location, or other metadata
-* [ ] Authentication and user roles
-* [ ] Activity logging (who modified what and when)
-* [ ] UI enhancements with React & TypeScript
-* [ ] Export stock data (CSV / PDF)
-* [ ] Mobile-friendly design
+We welcome contributions from the community.
 
----
+Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
 
-## 📁 Folder Structure (Initial)
+## Server Requirements
 
-```
-/cellstocker
-|
-├── /assets          # images, stylesheets
-├── /includes        # config and reusable scripts
-├── /templates       # header, footer, layout
-├── index.php        # main dashboard
-├── add_cell.php     # form to add cell records
-├── edit_cell.php    # edit functionality
-└── db.php           # database connection
-```
+PHP version 8.1 or higher is required, with the following extensions installed:
 
----
+- [intl](http://php.net/manual/en/intl.requirements.php)
+- [mbstring](http://php.net/manual/en/mbstring.installation.php)
 
-## 🧪 Getting Started
+> [!WARNING]
+> - The end of life date for PHP 7.4 was November 28, 2022.
+> - The end of life date for PHP 8.0 was November 26, 2023.
+> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
+> - The end of life date for PHP 8.1 will be December 31, 2025.
 
-1. Clone the repository
-2. Set up a local PHP server (e.g. XAMPP or MAMP)
-3. Import the included SQL file into phpMyAdmin
-4. Configure `/includes/db.php` with your DB credentials
-5. Navigate to `http://localhost/cellstocker` in your browser
+Additionally, make sure that the following extensions are enabled in your PHP:
 
----
-
-## 📌 Future Roadmap
-
-* Integrate React frontend with PHP backend
-* Use Fetch or Axios to build an interactive dashboard
-* Add analytics (e.g. low stock warnings, usage trends)
-* Deploy to a public host for remote access
-
----
-
-## 😋 About the Project
-
-This system is built for and inspired by my partner, a professional flow cytometrist, to solve a real pain point in day-to-day lab operations. It's intended as a portfolio project to demonstrate full-stack capability and a user-centered development process.
-
----
-
-## 📄 License
-
-MIT License
+- json (enabled by default - don't turn it off)
+- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
+- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
